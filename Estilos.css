@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Mochiy+Pop+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+font-family:  'Mochiy Pop One', sans-serif; ;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background-color: rgb(7, 0, 16);
+
+}
+.neon-txt{
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 75pt;
+    text-shadow: 
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 152px #bc13fe;
+    animation: neonEffect 1s infinite alternate;
+    padding-bottom: 100px;
+}
+@keyframes neonEffect {
+    100%{
+        text-shadow: 
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #bc13fe,
+        0 0 80px #bc13fe,
+        0 0 90px #bc13fe,
+        0 0 100px #bc13fe,
+        0 0 150px #bc13fe;
+
+    }
+    0%{
+        text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff,
+        0 0 10px #bc13fe,
+        0 0 45px #bc13fe,
+        0 0 55px #bc13fe,
+        0 0 70px #bc13fe,
+        0 0 80px #bc13fe;
+    }
+    
+}
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 0 linear-gradient(transparent,transparent,#0005);
+    
+
+}
+.loader{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+    
+}
+.loader:nth-child(1)::before,
+.loader:nth-child(2)::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent,#00adff);
+    background-size: 100px 180px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    z-index: -1;
+
+}
+
+.loader span{
+    position: absolute;
+    inset: 20px;
+    background: rgb(7, 0, 16);
+    border-radius: 50%;
+}
+.loader i{
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #00adff;
+    border-radius: 50%;
+    z-index:100;
+    box-shadow:
+    0 0 40px 5px #00adff,
+    0 0 60px 10px #00adff,
+    0 0 100px 20px #00adff;
+}
+.loader:nth-child(2),
+.loader:nth-child(4){
+    animation-delay: 1s;
+    filter: hue-rotate(335deg);
+}
+
+@media screen and (max-width: 760px){
+    .neon-txt{
+        font-size: 45pt;
+        padding-bottom: 60px;
+    }
+    .loader{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+    }
+}
